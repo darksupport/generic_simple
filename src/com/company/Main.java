@@ -1,19 +1,26 @@
 package com.company;
 
-import java.util.ArrayList;
+
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
 
-      PairHolder<Integer,String> test = new PairHolder<>(1,"one");
-        PairHolder<Integer,String> test2 = new PairHolder<>(2,"two");
+      Pair<Integer,String> test = new Pair<>(1,"one");
+        Pair<Integer,String> test2 = new Pair<>(2,"two");
+        Pair<Integer,String> test3 = new Pair<>(1,"dfjgdjfh");
 
-        Object [] array = new Object[]{test, test2};
+        Object [] array = new Object[]{test3, test, test2};
         PairCollection<Integer,String> collection = new PairCollection<>(array);
 
+        Object[] arrayPair = collection.getAllItems();
 
-        System.out.println(collection.getValue(1));
-        System.out.println(collection.getValue(2));
+        Arrays.sort(arrayPair);
+
+
+            System.out.println( collection.getKeysCount(2));
+
+
     }
 }
